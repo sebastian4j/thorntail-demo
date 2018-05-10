@@ -13,21 +13,6 @@
     <dependencies>        
         <dependency>
             <groupId>io.thorntail</groupId>
-            <artifactId>thorntail-testing</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>thorntail-devtools</artifactId>
-            <scope>test</scope>
-        </dependency>        
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>thorntail-testing-arquillian</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.thorntail</groupId>
             <artifactId>thorntail-jaxrs</artifactId>
         </dependency>
         <dependency>
