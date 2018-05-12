@@ -4,11 +4,11 @@
     <groupId>com.sebastian</groupId>
     <artifactId>thorntail-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>jar</packaging>    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>10</maven.compiler.source>
-        <maven.compiler.target>10</maven.compiler.target>
+        <maven.compiler.source>9</maven.compiler.source>
+        <maven.compiler.target>9</maven.compiler.target>
     </properties>
     <dependencies>        
         <dependency>
@@ -20,9 +20,24 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>    
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-testing</artifactId>
+            <scope>test</scope>
+        </dependency>        
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-devtools</artifactId>
+        </dependency>
     </dependencies>
     <build>               
-        <plugins>       
+        <plugins>                  
             <plugin>
                 <groupId>io.thorntail</groupId>
                 <artifactId>thorntail-maven-plugin</artifactId>
@@ -36,7 +51,7 @@
                         </goals>
                         <configuration>
                             <mode>fat</mode>
-                            <format>jar</format>
+                            <format>jar</format><!-- zip, jar, dir -->
                         </configuration>
                     </execution>
                 </executions>
@@ -51,7 +66,7 @@
                 <version>4.0.0-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
+            </dependency>                
         </dependencies>
     </dependencyManagement>
 </project>
