@@ -34,6 +34,10 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>thorntail-devtools</artifactId>
+        </dependency>       
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-openapi</artifactId>
         </dependency>
     </dependencies>
     <build>               

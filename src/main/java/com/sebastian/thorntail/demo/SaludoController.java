@@ -13,12 +13,14 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("/")
 public class SaludoController {
+
     @Inject
     private Servicio servicio;
+
     @GET
     @Path("/bienvenido/{cliente}")
     @Produces(MediaType.APPLICATION_JSON)
     public Mensaje saludar(@PathParam("cliente") final String cliente) {
-        return new Mensaje(servicio.servir());
+        return new Mensaje(servicio.servir() + " - Hola " + cliente);
     }
 }
