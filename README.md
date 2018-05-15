@@ -1,14 +1,14 @@
 # thorntail-demo
 ## microservicio demo utilizando thorntail: metrics + health + openapi
-http://localhost:8080/bienvenido/sebastian
-http://localhost:8080/openapi
-http://localhost:8080/health
-http://localhost:8080/metrics
-http://localhost:8080/metrics/applicatio
+http://localhost:8080/bienvenido/sebastian <br>
+http://localhost:8080/openapi <br>
+http://localhost:8080/health <br>
+http://localhost:8080/metrics <br>
+http://localhost:8080/metrics/application <br>
 
-# TODO
-### hystrix
-### ribbon
-### zulu
-### eureka
-### JWT
+## TODO
++ hystrix
++ ribbon
++ zulu
++ eureka
++ JWT
