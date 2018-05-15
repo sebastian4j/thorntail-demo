@@ -1,9 +1,12 @@
 package com.sebastian.thorntail.demo;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 /**
  *
  * @author sebastian
  */
+@Schema(name="Mensaje", description="Mensaje enviado al cliente.")
 public class Mensaje {
     public String mensaje;
     public Mensaje() {        
