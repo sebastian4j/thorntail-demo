@@ -39,6 +39,14 @@
             <groupId>io.thorntail</groupId>
             <artifactId>thorntail-openapi</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-health</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-metrics</artifactId>
+        </dependency>        
     </dependencies>
     <build>               
         <plugins>                  
@@ -70,7 +78,7 @@
                 <version>4.0.0-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>                
+            </dependency>                           
         </dependencies>
     </dependencyManagement>
 </project>

@@ -11,16 +11,14 @@ import org.eclipse.microprofile.openapi.models.PathItem;
 import org.eclipse.microprofile.openapi.models.info.Contact;
 import org.eclipse.microprofile.openapi.models.info.License;
 import org.eclipse.microprofile.openapi.models.info.Info;
-import org.eclipse.microprofile.openapi.models.media.Content;
 import org.eclipse.microprofile.openapi.models.parameters.Parameter;
 import org.eclipse.microprofile.openapi.models.responses.APIResponse;
-import org.eclipse.microprofile.openapi.models.responses.APIResponses;
 import org.eclipse.microprofile.openapi.models.servers.Server;
 import org.eclipse.microprofile.openapi.models.servers.ServerVariable;
 import org.eclipse.microprofile.openapi.models.servers.ServerVariables;
 
 public class ThorntailDemoOASFilter implements OASFilter {
-    
+
     @Override
     public APIResponse filterAPIResponse(APIResponse apiResponse) {
         if ("Missing description".equals(apiResponse.getDescription())) {
@@ -28,7 +26,7 @@ public class ThorntailDemoOASFilter implements OASFilter {
         }
         return apiResponse;
     }
-    
+
     @Override
     public void filterOpenAPI(OpenAPI openAPI) {
         openAPI.setInfo(OASFactory.createObject(Info.class)
@@ -41,7 +39,7 @@ public class ThorntailDemoOASFilter implements OASFilter {
                 .license(OASFactory.createObject(License.class)
                         .name("Eclipse Public License - v 1.0")
                         .url("https://www.eclipse.org/legal/epl-v10.html")));
-        
+
         openAPI.setServers(Arrays.asList(OASFactory.createObject(Server.class)
                 .url("http://localhost:8080")
                 .description("Servidor Demo")
@@ -55,13 +53,10 @@ public class ThorntailDemoOASFilter implements OASFilter {
                                 .responses(new APIResponsesImpl()
                                         .addApiResponse("saludo",
                                                 OASFactory.createObject(APIResponse.class).ref("Mensaje"))
-                                        ))
-                .addParameter(OASFactory.createObject(Parameter.class)
-                        .allowEmptyValue(false).required(true).name("cliente")
-                        .example("elias"))
+                                ))
+                        .addParameter(OASFactory.createObject(Parameter.class)
+                                .allowEmptyValue(false).required(true).name("cliente")
+                                .example("elias"))
         );
-        
-        APIResponses respones = new APIResponsesImpl();
     }
-    
 }

@@ -6,11 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import org.eclipse.microprofile.openapi.annotations.Operation;
-import org.eclipse.microprofile.openapi.annotations.media.Content;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.eclipse.microprofile.metrics.annotation.Counted;
 
 /**
  *
@@ -25,16 +21,10 @@ public class SaludoController {
     @GET
     @Path("/bienvenido/{cliente}")
     @Produces(MediaType.APPLICATION_JSON)
-    @APIResponses(value = {
-        @APIResponse(
-                responseCode = "200",
-                description = "Saludo al Cliente.",
-                content = @Content(
-                        mediaType = MediaType.APPLICATION_JSON,
-                        schema = @Schema(implementation = Mensaje.class)))})
-    @Operation(
-            summary = "Obtiene un saludo",
-            description = "Genera un saludo personalizado al cliente que realiza el request.")
+    @Counted(name = "cuenteBienvenidas",
+            absolute = true,
+            description = "Cantidad de llamadas a /bienvenido",
+            monotonic = true)
     public Mensaje saludar(@PathParam("cliente") final String cliente) {
         return new Mensaje(servicio.servir() + " - Hola " + cliente);
     }
